@@ -1,0 +1,51 @@
+<style>
+        #nav {
+            margin-top: 50px
+        }
+        
+        li {
+            float: left;
+            color: white;
+            margin-left: 20px;
+        }
+        
+        #aside {
+            float: left;
+            height: 500px;
+            width: 400px;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        a {
+            color: green;
+        }
+        
+        #reg {
+            position: absolute background-color: cornsilk
+        }
+        
+        #ad {
+            float: left
+        }
+         #ft {
+            position: fixed;
+            bottom: 0px;
+            color: white;
+            width: 100%;
+        }
+        center {
+            color: white
+        }
+        
+        #hd {
+            
+            position: fixed;
+            top: 0px;
+            color: white;
+            height: 6px;
+            width: 100%;
+        }
+    </style>
