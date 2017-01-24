@@ -1,0 +1,108 @@
+<html ng-app="cricApp" ng-controller="mycontroller">
+
+<head>
+    <!--
+   <title>
+    cricinfo
+</title>
+-->
+    <!--    <link rel="stylesheet" type="text/css" href="css_files/cric.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <style>
+        #lspage1 {
+            color: brown;
+            border-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <ng-view></ng-view>
+    <script type="text/ng-template" id='/main.html'>
+        <div id="mainpage">
+            <title>Main home page</title>
+            <a href="#a" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> LIVE SCORES</a>
+            <a href="#b" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> SERIES</a>
+            <a href="#c" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> COUNTRIES</a>
+            <a href="#d" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> NEWS</a>
+            <a href="#e" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> FEATURES</a>
+            <a href="#f" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> VIDEOS</a>
+            <a href="#g" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> BLOGS</a>
+            <a href="#h" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> PHOTOS</a>
+            <a href="#i" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()"> STATS</a>
+            <h4 style="float:right;padding-bottom:19;"> Search   </h4>
+        </div>
+
+
+    </script>
+
+    <div id="lspage1" ng-show="myVar" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()">
+        <a href="http://www.google.com">abcd</a>
+
+    </div>
+
+
+    <div id="lspage2" ng-show="myVar" ng-mouseover="dmenuinl()" ng-mouseleave="dmenuout()">
+
+
+    </div>
+    <script type="text/ng-template" id='/a.html '>
+        <title> Live score Page
+        </title>
+        <p> hello</p>
+    </script>
+
+    <script type="text/ng-template" id='/b.html '>
+        <title>
+            Series Page</title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/c.html '>
+        <title>
+            Countries
+        </title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/d.html '>
+        <title>News page
+        </title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/e.html '>
+        <title>features Page
+        </title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/f.html '>
+        <title> Videos
+        </title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/g.html '>
+        <title>
+            Blog Page
+        </title>
+        <p> hello</p>
+    </script>
+    <script type="text/ng-template" id='/h.html '>
+        <title>Photos Page</title>
+        <p> hello</p>
+    </script>
+
+    <script type="text/ng-template" id='/i.html '>
+
+        <title> Stats Page</title>
+        <p> hello</p>
+    </script>
+
+
+    <script src=../javascript_files/angfile.js></script>
+
+
+
+
+</body>
+
+</html>
