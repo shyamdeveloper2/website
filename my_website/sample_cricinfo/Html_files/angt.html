@@ -1,0 +1,29 @@
+<html ng-app="qqq">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+
+<body>
+    <div ng-controller="TestCtrl">
+        <h1>{{title}}</h1>
+        <input type="text" ng-model="title" placeholder="type here">
+    </div>
+
+
+    <script>
+        var appnew = angular.module("qqq", []);
+        appnew.controller("TestCtrl", function ($scope) {
+            //      $scope.title = 'Write a title here...';
+        });
+
+
+        //        function TestCtrl($scope) {
+        //            $scope.title = "Example title! (Change or delete me)";
+        //        }
+    </script>
+
+</body>
+
+</html>

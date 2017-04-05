@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title> Function inside Function </title>
+</head>
+
+<body>
+
+    <h1 id="demo"> </h1>
+    <script>
+        function sum(a) {
+            return function (b) {
+                return c = a + b;
+            }
+        }
+
+
+        document.getElementById("demo").innerHTML = sum(10)(7);
+    </script>
+
+</body>
+
+</html>
