@@ -1,0 +1,140 @@
+<html>
+
+<head>
+
+    <title> Chess Game</title>
+    <style>
+        .position {
+            float: left;
+            height: 50px;
+            width: 50px;
+        }
+        
+        .black {
+            background-color: #b58863;
+        }
+        
+        .white {
+            background-color: #f0d9b5;
+        }
+        
+        img {
+            width: auto;
+            height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto;
+        }
+        
+        #board {
+            border-color: gray;
+            border-style: solid;
+            border-width: thin;
+            height: 400px;
+            width: 400px;
+        }
+
+    </style>
+</head>
+
+<body>
+    Stage 1: Creating the Chess Board...
+
+    <div id="board"></div>
+    <h2 id="result"></h2>
+    <script>
+        createBoard();
+
+        function createBoard() {
+            document.getElementById("board").innerHTML = "";
+            var n = 8;
+            for (var i = 1; i < (n + 1); i++) {
+                for (var j = 1; j < (n + 1); j++) {
+                    var ele = document.createElement("div");
+                    ele.id = i + "" + j;
+                    if ((i + j) % 2 == 0) {
+                        ele.className = "position white";
+                    } else {
+                        ele.className = "position black";
+                    }
+                    document.getElementById("board").appendChild(ele);
+                }
+            }
+
+            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
+
+
+            //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='playGame()'>Play Game</button>"
+        }
+
+
+        function Setplayers() {
+            createBoard();
+            var positions = document.getElementsByClassName("position");
+            var solwPos = positions[8];
+            var solbPos = positions[1]; // solwPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_tile_ql.svg/2000px-Chess_tile_ql.svg.png'>"; // solbPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/2000px-Chess_kdt45.svg.png'>";
+            var t = 8;
+            var y = 48;
+            while (t <
+                16) {
+                positions[t].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/90px-Chess_plt45.svg.png'>";
+                t++;
+            }
+            while (y < 56) {
+                positions[y].innerHTML = "<img src= 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Chess_pdt60.png'>";
+                y++;
+            }
+            positions[0].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_rlt45.svg/90px-Chess_rlt45.svg.png'>";
+            positions[7].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_rlt45.svg/90px-Chess_rlt45.svg.png'>";
+            positions[56].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Chess_rdt45.svg/90px-Chess_rdt45.svg.png'>";
+            positions[63].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Chess_rdt45.svg/90px-Chess_rdt45.svg.png'>";
+            positions[57].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chess_ndt45.svg/90px-Chess_ndt45.svg.png'>";
+            positions[62].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chess_ndt45.svg/90px-Chess_ndt45.svg.png'>";
+            positions[1].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chess_nlt45.svg/90px-Chess_nlt45.svg.png'>";
+            positions[6].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chess_nlt45.svg/90px-Chess_nlt45.svg.png'>";
+            positions[2].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chess_blt45.svg/90px-Chess_blt45.svg.png'>";
+            positions[5].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chess_blt45.svg/90px-Chess_blt45.svg.png'>";
+            positions[58].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Chess_bdt45.svg/90px-Chess_bdt45.svg.png'>";
+            positions[61].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Chess_bdt45.svg/90px-Chess_bdt45.svg.png'>";
+             positions[4].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_tile_ql.svg/2000px-Chess_tile_ql.svg.png'>";
+                          positions[59].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/2000px-Chess_kdt45.svg.png'>";
+
+            positions[60].innerHTML="<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chess_qdt45.svg/90px-Chess_qdt45.svg.png'>";
+        positions[3].innerHTML="<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chess_klt45.svg/90px-Chess_klt45.svg.png'>";
+        }
+
+
+
+        //                function playGame() {
+        //                    createBoard();
+        //                    var positions = document.getElementsByClassName("position");
+        //        
+        //                    var qPos = positions[Math.floor(Math.random() * positions.length)];
+        //                    var kPos = positions[Math.floor(Math.random() * positions.length)];
+        //                    while (kPos.id == qPos.id) {
+        //                        kPos = positions[Math.floor(Math.random() * positions.length)];
+        //                    }
+        //        
+        //                    qPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_tile_ql.svg/2000px-Chess_tile_ql.svg.png'>";
+        //                    kPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/2000px-Chess_kdt45.svg.png'>";
+        //                    // Getting the digits in the positions of the king and the queen
+        //        
+        //                    var qId1 = qPos.id % 10;
+        //                    var kId1 = kPos.id % 10;
+        //                    var qId2 = Math.floor(qPos.id / 10);
+        //                    var kId2 = Math.floor(kPos.id / 10);
+        //                    var result;
+        //                    if ((qId1 == kId1) || (qId2 == kId2) || ((Math.abs(qId1 - kId1)) == (Math.abs(qId2 - kId2)))) {
+        //                        result = "Check!"
+        //                    } else {
+        //                        result = "The king is safe"
+        //                    }
+        //                    document.getElementById("result").innerHTML = result;
+        //                }
+
+    </script>
+
+</body>
+
+</html>
