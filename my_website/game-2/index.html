@@ -7,22 +7,21 @@
     <style>
         div {
             border-color: black;
-            border-style:  ridge;
+            border-style: ridge;
             border-width: thin;
         }
-
+        
         .position {
             float: left;
             height: 30px;
             width: 30px;
         }
-
-
+        
         .white {
             background-color: white;
             border: 10;
         }
-
+        
         img {
             width: auto;
             height: 50px;
@@ -31,9 +30,9 @@
             margin-right: auto;
             margin: 0 auto;
         }
-
+        
         #board {
-/*
+            /*
             border-color: black;
             border-style: solid;
             border-width: thin;
@@ -41,20 +40,18 @@
             height: 490px;
             width: 490px;
         }
+        
+        div.dice {
+            float: left;
+            width: 32px;
+            background: #F5F5F5;
+            border: #999 1px solid;
+            padding: 10px;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
 
-        div.dice{
-	float:left;
-	width:32px;
-	background:#F5F5F5;
-	border:#999 1px solid;
-	padding:10px;
-	font-size:24px;
-	text-align:center;
-	margin:5px;
-}
-        
-        
-        
     </style>
 
 </head>
@@ -63,20 +60,23 @@
     Stage: 1 of game 2
     <!--    <div id="board"></div>-->
 
-    <div   id="board"></div>
+    <div id="board"></div>
     <h2 id="result">.....</h2>
-    
-    
+
+
     <div id="die1" class="dice">0</div>
-<div id="die2" class="dice">0</div>
-<button onclick="rollDice()">Roll Dice</button>
-<h2 id="status" style="clear:left;"></h2>
-    
-    
-    
-    
-    
-    
+    <div id="die2" class="dice">0</div>
+    <button onclick="rollDice()">Roll Dice</button>
+    <h2 id="status" style="clear:left;"></h2>
+
+
+    <!--
+
+    <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+-->
+    <div id="result"></div>
+
+
     <script type="text/javascript">
         function createBoard() {
             document.getElementById("board").innerHTML = "";
@@ -93,8 +93,8 @@
                     document.getElementById("board").appendChild(ele);
                 }
             }
-//
-//            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
+            //
+            //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
 
             document.getElementById('12').style.backgroundColor = "white";
             document.getElementById('14').style.backgroundColor = "white";
@@ -298,24 +298,49 @@
         }
         createBoard();
 
-        
-        
-        
-        function rollDice(){
-    var die1 = document.getElementById("die1");
-    var die2 = document.getElementById("die2");
-    var status = document.getElementById("status");
-    var d1 = Math.floor(Math.random() * 6) + 1;
-    var d2 = Math.floor(Math.random() * 6) + 1;
-    var diceTotal = d1 + d2;
-    die1.innerHTML = d1;
-    die2.innerHTML = d2;
-    status.innerHTML = "You rolled "+diceTotal+".";
-    if(d1 == d2){
-        status.innerHTML += " DOUBLES! You get a free turn!!";
-    }
-}
+
+
+
+        function rollDice() {
+            var fp = [0, 1, 2, 3]
+            var die1 = document.getElementById("die1");
+            var die2 = document.getElementById("die2");
+            var status = document.getElementById("status");
+            var d1 = fp[Math.floor(Math.random() * fp.length)];
+            var d2 = fp[Math.floor(Math.random() * fp.length)];
+            var diceTotal = d1 + d2;
+            die1.innerHTML = d1;
+            die2.innerHTML = d2;
+            status.innerHTML = "You rolled " + diceTotal + ".";
+            if (diceTotal == 6) {
+                status.innerHTML += " DOUBLES! You get a free turn!!";
+            }
+            if (diceTotal == 0) {
+                diceTotal= 12;
+                status.innerHTML=12;
+                status.innerHTML += " 2 DOUBLES! You get a free turn!!";
+            }
+            if (diceTotal != 0 && diceTotal != 6) {
+                status.innerHTML += " Your turn over give it to next player";
+
+            }
+
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.status) {
+                    localStorage.status = diceTotal;
+                } else {
+                    localStorage.status = 1;
+                }
+                document.getElementById("result").innerHTML = " dice total is  " + localStorage.status + "..";
+            } else {
+                document.getElementById("result").innerHTML = "Sorry..";
+            }
+        }
+
     </script>
+
+
+
 
 </body>
 
