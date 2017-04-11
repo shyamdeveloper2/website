@@ -1,0 +1,281 @@
+<html>
+
+<head>
+    <title>Game2
+    </title>
+
+    <style>
+        div {
+            border-color: black;
+            border-style:  ridge;
+            border-width: thin;
+        }
+
+        .position {
+            float: left;
+            height: 30px;
+            width: 30px;
+        }
+
+
+        .white {
+            background-color: white;
+            border: 10;
+        }
+
+        img {
+            width: auto;
+            height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto;
+        }
+
+        #board {
+/*
+            border-color: black;
+            border-style: solid;
+            border-width: thin;
+*/
+            height: 490px;
+            width: 490px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    Stage: 1 of game 2
+    <!--    <div id="board"></div>-->
+
+    <div   id="board"></div>
+    <h2 id="result"></h2>
+    <script type="text/javascript">
+        function createBoard() {
+            document.getElementById("board").innerHTML = "";
+            var n = 15;
+            for (var i = 1; i < (n + 1); i++) {
+                for (var j = 1; j < (n + 1); j++) {
+                    var ele = document.createElement("div");
+                    ele.id = i + "" + j;
+                    if ((i + j) % 2 == 0) {
+                        ele.className = "position white";
+                    } else {
+                        ele.className = "position black";
+                    }
+                    document.getElementById("board").appendChild(ele);
+                }
+            }
+//
+//            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
+
+            document.getElementById('12').style.backgroundColor = "white";
+            document.getElementById('14').style.backgroundColor = "white";
+            document.getElementById('16').style.backgroundColor = "white";
+            document.getElementById('18').style.backgroundColor = "yellow";
+            document.getElementById('17').style.backgroundColor = "red";
+            document.getElementById('19').style.backgroundColor = "red";
+            document.getElementById('110').style.backgroundColor = "white";
+
+
+            //second row
+            document.getElementById('21').style.backgroundColor = "white";
+            document.getElementById('23').style.backgroundColor = "white";
+            document.getElementById('25').style.backgroundColor = "white";
+            document.getElementById('27').style.backgroundColor = "red";
+            document.getElementById('28').style.backgroundColor = "red";
+            document.getElementById('29').style.backgroundColor = "red";
+            document.getElementById('211').style.backgroundColor = "white";
+            document.getElementById('213').style.backgroundColor = "white";
+            document.getElementById('215').style.backgroundColor = "white";
+            // document.getElementById('217').style.backgroundColor = "white";
+            // third row
+            document.getElementById('32').style.backgroundColor = "white";
+            document.getElementById('34').style.backgroundColor = "white";
+            document.getElementById('36').style.backgroundColor = "white";
+            document.getElementById('37').style.backgroundColor = "red";
+            document.getElementById('38').style.backgroundColor = "red";
+            document.getElementById('39').style.backgroundColor = "red";
+            document.getElementById('310').style.backgroundColor = "white";
+            document.getElementById('312').style.backgroundColor = "white";
+            document.getElementById('314').style.backgroundColor = "white";
+
+            // 4th row
+
+
+            document.getElementById('41').style.backgroundColor = "white";
+            document.getElementById('43').style.backgroundColor = "white";
+            document.getElementById('45').style.backgroundColor = "white";
+            document.getElementById('47').style.backgroundColor = "red";
+            document.getElementById('48').style.backgroundColor = "red";
+            document.getElementById('49').style.backgroundColor = "red";
+            document.getElementById('411').style.backgroundColor = "white";
+            document.getElementById('413').style.backgroundColor = "white";
+            document.getElementById('415').style.backgroundColor = "white";
+
+            //5th row
+            document.getElementById('61').style.backgroundColor = "white";
+            document.getElementById('63').style.backgroundColor = "white";
+            document.getElementById('65').style.backgroundColor = "white";
+            document.getElementById('57').style.backgroundColor = "red";
+            document.getElementById('58').style.backgroundColor = "red";
+            document.getElementById('59').style.backgroundColor = "red";
+            document.getElementById('611').style.backgroundColor = "white";
+            document.getElementById('613').style.backgroundColor = "white";
+            document.getElementById('615').style.backgroundColor = "white";
+            // document.getElementById('217').style.backgroundColor = "white";
+            // third row
+            document.getElementById('52').style.backgroundColor = "white";
+            document.getElementById('54').style.backgroundColor = "white";
+            document.getElementById('56').style.backgroundColor = "white";
+            document.getElementById('67').style.backgroundColor = "red";
+            document.getElementById('68').style.backgroundColor = "red";
+            document.getElementById('69').style.backgroundColor = "red";
+            document.getElementById('510').style.backgroundColor = "white";
+            document.getElementById('512').style.backgroundColor = "white";
+            document.getElementById('514').style.backgroundColor = "white";
+
+            // 4th row
+
+
+            document.getElementById('81').style.backgroundColor = "yellow";
+            document.getElementById('83').style.backgroundColor = "red";
+            document.getElementById('85').style.backgroundColor = "red";
+            document.getElementById('87').style.backgroundColor = "yellow";
+            document.getElementById('88').style.backgroundColor = "yellow";
+            document.getElementById('89').style.backgroundColor = "yellow";
+            document.getElementById('811').style.backgroundColor = "red";
+            document.getElementById('813').style.backgroundColor = "red";
+            document.getElementById('815').style.backgroundColor = "yellow";
+            //second row
+            document.getElementById('72').style.backgroundColor = "red";
+            document.getElementById('74').style.backgroundColor = "red";
+            document.getElementById('76').style.backgroundColor = "red";
+            document.getElementById('77').style.backgroundColor = "yellow";
+            document.getElementById('78').style.backgroundColor = "yellow";
+            document.getElementById('79').style.backgroundColor = "yellow";
+            document.getElementById('710').style.backgroundColor = "red";
+            document.getElementById('712').style.backgroundColor = "red";
+            document.getElementById('714').style.backgroundColor = "red";
+            // document.getElementById('217').style.backgroundColor = "white";
+            // third row
+            document.getElementById('92').style.backgroundColor = "red";
+            document.getElementById('94').style.backgroundColor = "red";
+            document.getElementById('96').style.backgroundColor = "red";
+            document.getElementById('97').style.backgroundColor = "yellow";
+            document.getElementById('98').style.backgroundColor = "yellow";
+            document.getElementById('99').style.backgroundColor = "yellow";
+            document.getElementById('910').style.backgroundColor = "red";
+            document.getElementById('912').style.backgroundColor = "red";
+            document.getElementById('914').style.backgroundColor = "red";
+
+            // 4th row
+
+
+            document.getElementById('101').style.backgroundColor = "white";
+            document.getElementById('103').style.backgroundColor = "white";
+            document.getElementById('105').style.backgroundColor = "white";
+            document.getElementById('107').style.backgroundColor = "red";
+            document.getElementById('108').style.backgroundColor = "red";
+            document.getElementById('109').style.backgroundColor = "red";
+            document.getElementById('1011').style.backgroundColor = "white";
+            document.getElementById('1013').style.backgroundColor = "white";
+            document.getElementById('1015').style.backgroundColor = "white";
+            //11th row
+
+
+            document.getElementById('116').style.backgroundColor = "white";
+            document.getElementById('117').style.backgroundColor = "red";
+            document.getElementById('118').style.backgroundColor = "red";
+            document.getElementById('119').style.backgroundColor = "red";
+            document.getElementById('1110').style.backgroundColor = "white";
+            document.getElementById('1112').style.backgroundColor = "white";
+            document.getElementById('1114').style.backgroundColor = "white";
+
+
+            //second row
+            document.getElementById('121').style.backgroundColor = "white";
+            document.getElementById('123').style.backgroundColor = "white";
+            document.getElementById('125').style.backgroundColor = "white";
+            document.getElementById('127').style.backgroundColor = "red";
+            document.getElementById('128').style.backgroundColor = "red";
+            document.getElementById('129').style.backgroundColor = "red";
+            document.getElementById('1211').style.backgroundColor = "white";
+            document.getElementById('1213').style.backgroundColor = "white";
+            document.getElementById('1215').style.backgroundColor = "white";
+            // document.getElementById('217').style.backgroundColor = "white";
+            // third row
+            document.getElementById('132').style.backgroundColor = "white";
+            document.getElementById('134').style.backgroundColor = "white";
+            document.getElementById('136').style.backgroundColor = "white";
+            document.getElementById('137').style.backgroundColor = "red";
+            document.getElementById('138').style.backgroundColor = "red";
+            document.getElementById('139').style.backgroundColor = "red";
+            document.getElementById('1310').style.backgroundColor = "white";
+            document.getElementById('1312').style.backgroundColor = "white";
+            document.getElementById('1314').style.backgroundColor = "white";
+
+            // 4th row
+
+
+            document.getElementById('141').style.backgroundColor = "white";
+            document.getElementById('143').style.backgroundColor = "white";
+            document.getElementById('145').style.backgroundColor = "white";
+            document.getElementById('147').style.backgroundColor = "red";
+            document.getElementById('148').style.backgroundColor = "red";
+            document.getElementById('149').style.backgroundColor = "red";
+            document.getElementById('1411').style.backgroundColor = "white";
+            document.getElementById('1413').style.backgroundColor = "white";
+            document.getElementById('1415').style.backgroundColor = "white";
+
+
+            document.getElementById('152').style.backgroundColor = "white";
+            document.getElementById('154').style.backgroundColor = "white";
+            document.getElementById('156').style.backgroundColor = "white";
+            document.getElementById('157').style.backgroundColor = "red";
+            document.getElementById('158').style.backgroundColor = "yellow";
+            document.getElementById('159').style.backgroundColor = "red";
+            document.getElementById('1510').style.backgroundColor = "white";
+            document.getElementById('1512').style.backgroundColor = "white";
+            document.getElementById('1514').style.backgroundColor = "white";
+            document.getElementById('112').style.backgroundColor = "white";
+            document.getElementById('114').style.backgroundColor = "white";
+
+            document.getElementById('71').style.backgroundColor = "red";
+            document.getElementById('73').style.backgroundColor = "red";
+            document.getElementById('75').style.backgroundColor = "red";
+
+            document.getElementById('711').style.backgroundColor = "red";
+            document.getElementById('713').style.backgroundColor = "red";
+            document.getElementById('715').style.backgroundColor = "red";
+
+            document.getElementById('82').style.backgroundColor = "red";
+            document.getElementById('84').style.backgroundColor = "red";
+            document.getElementById('86').style.backgroundColor = "red";
+            document.getElementById('1010').style.backgroundColor = "yellow";
+
+            document.getElementById('810').style.backgroundColor = "red";
+            document.getElementById('812').style.backgroundColor = "red";
+            document.getElementById('814').style.backgroundColor = "red";
+            document.getElementById('91').style.backgroundColor = "red";
+            document.getElementById('93').style.backgroundColor = "red";
+            document.getElementById('95').style.backgroundColor = "red";
+            document.getElementById('66').style.backgroundColor = "yellow";
+            document.getElementById('610').style.backgroundColor = "yellow";
+            document.getElementById('106').style.backgroundColor = "yellow";
+            document.getElementById('911').style.backgroundColor = "red";
+            document.getElementById('913').style.backgroundColor = "red";
+            document.getElementById('915').style.backgroundColor = "red";
+
+            //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='playGame()'>Play Game</button>"
+        }
+        createBoard();
+
+    </script>
+
+</body>
+
+
+</html>
