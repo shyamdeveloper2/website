@@ -1,6 +1,151 @@
 <html>
 
 <head>
+    <title>Game2
+    </title>
+
+    <style>
+        div {
+            border-color: black;
+            border-style: ridge;
+            border-width: thin;
+        }
+        
+        .position {
+            float: left;
+            height: 30px;
+            width: 30px;
+        }
+        
+        .white {
+            background-color: white;
+            border: 10;
+        }
+        
+        img {
+            width: auto;
+            height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto;
+        }
+        
+        #board {
+            /*
+            border-color: black;
+            border-style: solid;
+            border-width: thin;
+*/
+            height: 490px;
+            width: 490px;
+        }
+        
+        div.dice {
+            float: left;
+            width: 32px;
+            background: #F5F5F5;
+            border: #999 1px solid;
+            padding: 10px;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    Stage: 1 of game 2
+    <!--    <div id="board"></div>-->
+
+    <div id="board"></div>
+    <h2 id="result">.....</h2>
+
+
+    <script>
+        function createBoard() {
+            document.getElementById("board").innerHTML = "";
+            var n = 15;
+            for (var i = 1; i < (n + 1); i++) {
+                for (var j = 1; j < (n + 1); j++) {
+                    var ele = document.createElement("div");
+                    ele.id = i + "" + j;
+                    if ((i + j) % 2 == 0) {
+                        ele.className = "position white";
+                    } else {
+                        ele.className = "position black";
+                    }
+                    document.getElementById("board").appendChild(ele);
+                }
+            }
+
+
+            var tt;
+            for (var gt = 710; gt < 1000; gt = gt + 100) {
+                for (tt = gt; tt < gt + 6; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+
+                }
+            }
+
+            for (var gt = 70; gt < 100; gt = gt + 10) {
+                for (tt = gt + 1; tt < gt + 7; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+
+                }
+            }
+            for (var gt = 10; gt < 70; gt = gt + 10) {
+                for (tt = gt + 7; tt <= gt + 9; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+
+                }
+            }
+            for (var gt = 70; gt < 100; gt = gt + 10) {
+                for (tt = gt + 7; tt <= gt + 9; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "yellow";
+
+                }
+            }
+            document.getElementById('1010').style.backgroundColor = "yellow";
+            document.getElementById('66').style.backgroundColor = "yellow";
+            document.getElementById('610').style.backgroundColor = "yellow";
+            document.getElementById('106').style.backgroundColor = "yellow";
+            document.getElementById('81').style.backgroundColor = "yellow";
+            document.getElementById('815').style.backgroundColor = "yellow";
+            document.getElementById('18').style.backgroundColor = "yellow";
+
+            for (var gt = 100; gt < 160; gt = gt + 10) {
+                for (tt = gt + 7; tt <= gt + 9; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+
+                }
+            }
+            
+            document.getElementById('158').style.backgroundColor = "yellow";
+
+        }
+        createBoard();
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+<html>
+
+<head>
     <style>
         td {
             border-color: black;
@@ -185,6 +330,14 @@
 
     </TABLE>
 
+
+<label id="p1la">
+    One <input type="Number"><br>
+    six <input type="Number"><br>
+    twelve<input type="Number"><br>
+
+
 </body>
 
 </html>
+-->

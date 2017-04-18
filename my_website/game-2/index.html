@@ -66,14 +66,16 @@
 
     <div id="die1" class="dice">0</div>
     <div id="die2" class="dice">0</div>
-    <button onclick="rollDice()">Roll Dice</button>
+    <button onclick="asd()">Roll Dice</button>
+    <button onclick="cleard()">Clear</button>
+
     <h2 id="status" style="clear:left;"></h2>
-
-
-    <!--
-
-    <p><button onclick="clickCounter()" type="button">Click me!</button></p>
--->
+    Player1 :
+    <h4 id="p1" style="clear:left;"></h4>
+    Player2
+    <h4 id="p2" style="clear:left;"></h4> Player3
+    <h4 id="p3" style="clear:left;"> </h4>Player4
+    <h4 id="p4" style="clear:left;"></h4>
     <div id="result"></div>
 
 
@@ -93,18 +95,13 @@
                     document.getElementById("board").appendChild(ele);
                 }
             }
-            //
-            //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
-
+            // 1st row 
             document.getElementById('12').style.backgroundColor = "white";
             document.getElementById('14').style.backgroundColor = "white";
             document.getElementById('16').style.backgroundColor = "white";
-            document.getElementById('18').style.backgroundColor = "yellow";
             document.getElementById('17').style.backgroundColor = "red";
             document.getElementById('19').style.backgroundColor = "red";
             document.getElementById('110').style.backgroundColor = "white";
-
-
             //second row
             document.getElementById('21').style.backgroundColor = "white";
             document.getElementById('23').style.backgroundColor = "white";
@@ -115,7 +112,7 @@
             document.getElementById('211').style.backgroundColor = "white";
             document.getElementById('213').style.backgroundColor = "white";
             document.getElementById('215').style.backgroundColor = "white";
-            // document.getElementById('217').style.backgroundColor = "white";
+
             // third row
             document.getElementById('32').style.backgroundColor = "white";
             document.getElementById('34').style.backgroundColor = "white";
@@ -128,8 +125,6 @@
             document.getElementById('314').style.backgroundColor = "white";
 
             // 4th row
-
-
             document.getElementById('41').style.backgroundColor = "white";
             document.getElementById('43').style.backgroundColor = "white";
             document.getElementById('45').style.backgroundColor = "white";
@@ -150,8 +145,8 @@
             document.getElementById('611').style.backgroundColor = "white";
             document.getElementById('613').style.backgroundColor = "white";
             document.getElementById('615').style.backgroundColor = "white";
-            // document.getElementById('217').style.backgroundColor = "white";
-            // third row
+
+            // 6th row
             document.getElementById('52').style.backgroundColor = "white";
             document.getElementById('54').style.backgroundColor = "white";
             document.getElementById('56').style.backgroundColor = "white";
@@ -162,19 +157,7 @@
             document.getElementById('512').style.backgroundColor = "white";
             document.getElementById('514').style.backgroundColor = "white";
 
-            // 4th row
-
-
-            document.getElementById('81').style.backgroundColor = "yellow";
-            document.getElementById('83').style.backgroundColor = "red";
-            document.getElementById('85').style.backgroundColor = "red";
-            document.getElementById('87').style.backgroundColor = "yellow";
-            document.getElementById('88').style.backgroundColor = "yellow";
-            document.getElementById('89').style.backgroundColor = "yellow";
-            document.getElementById('811').style.backgroundColor = "red";
-            document.getElementById('813').style.backgroundColor = "red";
-            document.getElementById('815').style.backgroundColor = "yellow";
-            //second row
+            // 7th row
             document.getElementById('72').style.backgroundColor = "red";
             document.getElementById('74').style.backgroundColor = "red";
             document.getElementById('76').style.backgroundColor = "red";
@@ -184,20 +167,24 @@
             document.getElementById('710').style.backgroundColor = "red";
             document.getElementById('712').style.backgroundColor = "red";
             document.getElementById('714').style.backgroundColor = "red";
-            // document.getElementById('217').style.backgroundColor = "white";
-            // third row
+
+
+
+            // 8th row   
+            document.getElementById('83').style.backgroundColor = "red";
+            document.getElementById('85').style.backgroundColor = "red";
+            document.getElementById('811').style.backgroundColor = "red";
+            document.getElementById('813').style.backgroundColor = "red";
+
+            //9th row
             document.getElementById('92').style.backgroundColor = "red";
             document.getElementById('94').style.backgroundColor = "red";
             document.getElementById('96').style.backgroundColor = "red";
-            document.getElementById('97').style.backgroundColor = "yellow";
-            document.getElementById('98').style.backgroundColor = "yellow";
-            document.getElementById('99').style.backgroundColor = "yellow";
             document.getElementById('910').style.backgroundColor = "red";
             document.getElementById('912').style.backgroundColor = "red";
             document.getElementById('914').style.backgroundColor = "red";
 
-            // 4th row
-
+            //10th row
 
             document.getElementById('101').style.backgroundColor = "white";
             document.getElementById('103').style.backgroundColor = "white";
@@ -220,7 +207,7 @@
             document.getElementById('1114').style.backgroundColor = "white";
 
 
-            //second row
+            //12th row
             document.getElementById('121').style.backgroundColor = "white";
             document.getElementById('123').style.backgroundColor = "white";
             document.getElementById('125').style.backgroundColor = "white";
@@ -230,8 +217,7 @@
             document.getElementById('1211').style.backgroundColor = "white";
             document.getElementById('1213').style.backgroundColor = "white";
             document.getElementById('1215').style.backgroundColor = "white";
-            // document.getElementById('217').style.backgroundColor = "white";
-            // third row
+            //13th row
             document.getElementById('132').style.backgroundColor = "white";
             document.getElementById('134').style.backgroundColor = "white";
             document.getElementById('136').style.backgroundColor = "white";
@@ -242,7 +228,7 @@
             document.getElementById('1312').style.backgroundColor = "white";
             document.getElementById('1314').style.backgroundColor = "white";
 
-            // 4th row
+            //14th row
 
 
             document.getElementById('141').style.backgroundColor = "white";
@@ -254,87 +240,158 @@
             document.getElementById('1411').style.backgroundColor = "white";
             document.getElementById('1413').style.backgroundColor = "white";
             document.getElementById('1415').style.backgroundColor = "white";
-
+            //15th row
 
             document.getElementById('152').style.backgroundColor = "white";
             document.getElementById('154').style.backgroundColor = "white";
             document.getElementById('156').style.backgroundColor = "white";
             document.getElementById('157').style.backgroundColor = "red";
-            document.getElementById('158').style.backgroundColor = "yellow";
             document.getElementById('159').style.backgroundColor = "red";
             document.getElementById('1510').style.backgroundColor = "white";
             document.getElementById('1512').style.backgroundColor = "white";
             document.getElementById('1514').style.backgroundColor = "white";
             document.getElementById('112').style.backgroundColor = "white";
             document.getElementById('114').style.backgroundColor = "white";
-
+            // center row
             document.getElementById('71').style.backgroundColor = "red";
             document.getElementById('73').style.backgroundColor = "red";
             document.getElementById('75').style.backgroundColor = "red";
-
             document.getElementById('711').style.backgroundColor = "red";
             document.getElementById('713').style.backgroundColor = "red";
             document.getElementById('715').style.backgroundColor = "red";
-
             document.getElementById('82').style.backgroundColor = "red";
             document.getElementById('84').style.backgroundColor = "red";
             document.getElementById('86').style.backgroundColor = "red";
-            document.getElementById('1010').style.backgroundColor = "yellow";
-
             document.getElementById('810').style.backgroundColor = "red";
             document.getElementById('812').style.backgroundColor = "red";
             document.getElementById('814').style.backgroundColor = "red";
             document.getElementById('91').style.backgroundColor = "red";
             document.getElementById('93').style.backgroundColor = "red";
             document.getElementById('95').style.backgroundColor = "red";
-            document.getElementById('66').style.backgroundColor = "yellow";
-            document.getElementById('610').style.backgroundColor = "yellow";
-            document.getElementById('106').style.backgroundColor = "yellow";
             document.getElementById('911').style.backgroundColor = "red";
             document.getElementById('913').style.backgroundColor = "red";
             document.getElementById('915').style.backgroundColor = "red";
+            //safe zone
+            document.getElementById('1010').style.backgroundColor = "yellow";
+            document.getElementById('66').style.backgroundColor = "yellow";
+            document.getElementById('610').style.backgroundColor = "yellow";
+            document.getElementById('106').style.backgroundColor = "yellow";
+            document.getElementById('158').style.backgroundColor = "yellow";
+            document.getElementById('97').style.backgroundColor = "yellow";
+            document.getElementById('98').style.backgroundColor = "yellow";
+            document.getElementById('99').style.backgroundColor = "yellow";
+            document.getElementById('81').style.backgroundColor = "yellow";
+            document.getElementById('87').style.backgroundColor = "yellow";
+            document.getElementById('88').style.backgroundColor = "yellow";
+            document.getElementById('89').style.backgroundColor = "yellow";
+            document.getElementById('815').style.backgroundColor = "yellow";
+            document.getElementById('18').style.backgroundColor = "yellow";
 
-            //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='playGame()'>Play Game</button>"
         }
         createBoard();
 
-
-
-
-        function rollDice() {
-            var fp = [0, 1, 2, 3]
+        function abdd() {
+            var county = 0;
+            //var rem;
+            var qw;
+            var i;
+            var fp = [0, 1, 2, 3];
+            var ert = [];
             var die1 = document.getElementById("die1");
             var die2 = document.getElementById("die2");
             var status = document.getElementById("status");
             var d1 = fp[Math.floor(Math.random() * fp.length)];
             var d2 = fp[Math.floor(Math.random() * fp.length)];
-            var diceTotal = d1 + d2;
             die1.innerHTML = d1;
             die2.innerHTML = d2;
-            status.innerHTML = "You rolled " + diceTotal + ".";
-            if (diceTotal == 6) {
-                status.innerHTML += " DOUBLES! You get a free turn!!";
-            }
-            if (diceTotal == 0) {
-                diceTotal= 12;
-                status.innerHTML=12;
-                status.innerHTML += " 2 DOUBLES! You get a free turn!!";
-            }
-            if (diceTotal != 0 && diceTotal != 6) {
-                status.innerHTML += " Your turn over give it to next player";
+            //       status.innerHTML = "You rolled " + diceTotal + ".";
+            var diceTotal = d1 + d2;
+            return diceTotal;
+        }
+        var ert = [];
+        asd();
 
-            }
+        function asd() {
+            var rte = abdd();
+            var status = document.getElementById("status");
 
-            if (typeof(Storage) !== "undefined") {
-                if (localStorage.status) {
-                    localStorage.status = diceTotal;
-                } else {
-                    localStorage.status = 1;
-                }
-                document.getElementById("result").innerHTML = " dice total is  " + localStorage.status + "..";
-            } else {
-                document.getElementById("result").innerHTML = "Sorry..";
+            if (Number(rte) == 0) {
+                rte = 12;
             }
+            status.innerHTML = rte;
+            if (Number(rte) < 6 && Number(rte) > 1) {
+                status.innerHTML += " You rolled" + Number(rte) + "Your turn is over.";
+                var po = sessionStorage.setItem(rte);
+            }
+            if (Number(rte) == 6 || Number(rte) == 1 || Number(rte) == 12) {
+                status.innerHTML += " You rolled" + Number(rte) + "  You have one free turn.";
+            }
+        }
+        //        function rollDice() {
+        //            var county = 0;
+        //            //var rem;
+        //            var qw;
+        //            var i;
+        //            var fp = [0, 1, 2, 3];
+        //            var ert = [];
+        //            var die1 = document.getElementById("die1");
+        //            var die2 = document.getElementById("die2");
+        //            var status = document.getElementById("status");
+        //            var d1 = fp[Math.floor(Math.random() * fp.length)];
+        //            var d2 = fp[Math.floor(Math.random() * fp.length)];
+        //            var diceTotal = d1 + d2;
+        //            die1.innerHTML = d1;
+        //            die2.innerHTML = d2;
+        //            status.innerHTML = "You rolled " + diceTotal + ".";
+        //            for (i = 0; i < 3; i++) {
+        //                ert[i] = diceTotal;
+        //                if (diceTotal > 1 && diceTotal < 6) {
+        //                    status.innerHTML += " Your turn over give it to next player";
+        //
+        //                }
+        //                if (diceTotal == 1 || diceTotal == 6 || diceTotal == 12) {
+        //                    status.innerHTML += " YOU GOT  A ONE FREE TURN!!";
+        //                    t = t + diceTotal;
+        //                    county = county + 1;
+        //                }
+        //                if (diceTotal == 0) {
+        //                    status.innerHTML = 12;
+        //                    //status.innerHTML += " 2 DOUBLES! You get a free turn!!";
+        //                    diceTotal = 12;
+        //                    // rem = 12;
+        //                    county = county + 1;
+        //                }
+        //                if (county > 0) {
+        //                    if (typeof(Storage) !== "undefined") {
+        //                        if (localStorage.status) {
+        //                            localStorage.status = Number(localStorage.status) + diceTotal;
+        //                            //qw=localStorage.status;
+        //
+        //                        } else {
+        //                            localStorage.status = 1;
+        //                        }
+        //                        document.getElementById("result").innerHTML = " dice total is  " + localStorage.status + "..";
+        //                    } else {
+        //                        document.getElementById("result").innerHTML = "Sorry..";
+        //                    }
+        //
+        //                }
+        //            }
+        document.getElementById("p1").innerHTML = ert[0];
+        document.getElementById("p2").innerHTML = ert[1];
+        document.getElementById("p3").innerHTML = ert[2];
+        document.getElementById("p4").innerHTML = ert[3];
+
+        //        }
+
+
+        function cleard() {
+            localStorage.clear();
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("status").innerHTML = "";
+            document.getElementById("die1").innerHTML = "";
+            document.getElementById("die2").innerHTML = "";
+
         }
 
     </script>

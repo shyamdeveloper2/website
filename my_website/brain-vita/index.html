@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title> Brain Vita</title>
+
+    <style>
+        .position {
+            float: left;
+            height: 50px;
+            width: 50px;
+        }
+        
+        .black {
+            background-color: #white;
+        }
+        
+        .white {
+            background-color: #white;
+        }
+        
+        img {
+            width: auto;
+            height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto;
+        }
+        
+        #board {
+            border-color: gray;
+            border-style: solid;
+            border-width: thin;
+            height: 390px;
+            width: 390px;
+        }
+        
+        div {
+            border-color: black;
+            border-style: groove;
+            border-width: thin;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    Stage 1: board design in Brain Vita Game.
+
+
+
+    <div id="board" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <h2 id="result"></h2>
+    <script>
+        createBoard();
+
+        function createBoard() {
+            document.getElementById("board").innerHTML = "";
+            var n = 7;
+            for (var i = 1; i < (n + 1); i++) {
+                for (var j = 1; j < (n + 1); j++) {
+                    var ele = document.createElement("div");
+                    ele.id = i + "" + j;
+                    if ((i + j) % 2 == 0) {
+                        ele.className = "position white droppable";
+                    } else {
+                        ele.className = "position black droppable";
+                    }
+                    document.getElementById("board").appendChild(ele);
+                }
+            }
+            var tt;
+            for (var gt = 10; gt < 80; gt = gt + 10) {
+                for (tt = gt + 3; tt < gt + 6; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+                }
+            }
+
+            for (var gt = 30; gt < 60; gt = gt + 10) {
+                for (tt = gt + 1; tt < gt + 8; tt++) {
+                    document.getElementById(tt).style.backgroundColor = "red";
+
+                }
+            }
+
+            for (var gt = 10; gt < 80; gt = gt + 10) {
+                for (tt = gt + 3; tt < gt + 6; tt++) {
+                    document.getElementById(tt).innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/90px-Chess_plt45.svg.png'>";
+                }
+            }
+
+            for (var gt = 30; gt < 60; gt = gt + 10) {
+                for (tt = gt + 1; tt < gt + 8; tt++) {
+                    document.getElementById(tt).innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/90px-Chess_plt45.svg.png'>";
+
+
+                }
+            }
+            document.getElementById(44).innerHTML = "";
+
+
+        }
+
+
+
+        //        function allowDrop(ev) { // ev.preventDefault(); // } // // function drag(ev) { // ev.dataTransfer.setData("text", ev.target.id); // } // // function drop(ev) { // ev.preventDefault(); // var data = ev.dataTransfer.getData("text"); // ev.target.appendChild(document.getElementById(data)); // }
+
+        $(function() {
+            $(":img").draggable();
+            $(".droppable").droppable({
+                drop: function(event, ui) {
+                    $(this)
+                        .addClass("ui-state-highlight")
+                        .find("p")
+                        .html("Dropped!");
+                }
+            });
+        });
+
+
+
+
+
+
+        //        function Setplayers() {
+        //            createBoard();
+        //            var positions = document.getElementsByClassName("position");
+        //            var solwPos = positions[8];
+        //            var solbPos = positions[1]; // solwPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_tile_ql.svg/2000px-Chess_tile_ql.svg.png'>"; // solbPos.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/2000px-Chess_kdt45.svg.png'>";
+        //            var t = 8;
+        //            var y = 48;
+        //            while (t <
+        //                16) {
+        //                positions[t].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/90px-Chess_plt45.svg.png'>";
+        //                t++;
+        //            }
+        //            while (y < 56) {
+        //                positions[y].innerHTML = "<img src= 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Chess_pdt60.png'>";
+        //                y++;
+        //            }
+        //        }
+
+
+        //            }
+        ////          var tt;
+        //            for( var gt=10;gt<)
+        //            for(tt=13;tt<16;tt++)
+        //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='Setplayers()'>Play Game</button>"
+
+        //
+        //     //            document.getElementById("board").innerHTML += "<br><button id='play' onclick='playGame()'>Play Game</button>"
+        // }
+
+    </script>
+
+</body>
+
+</html>
